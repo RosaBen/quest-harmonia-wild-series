@@ -1,17 +1,20 @@
 {
-  "name": "my_project_name",
+  "name": "quest-harmonia-wild-series",
   "version": "0.0.1",
   "private": true,
   "description": "",
-  "homepage": "https://github.com/WildCodeSchool/my_project_name#readme",
+  "homepage": "https://github.com/WildCodeSchool/quest-harmonia-wild-series#readme",
   "bugs": {
-    "url": "https://github.com/WildCodeSchool/my_project_name/issues"
+    "url": "https://github.com/WildCodeSchool/quest-harmonia-wild-series/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WildCodeSchool/my_project_name.git"
+    "url": "git+https://github.com/WildCodeSchool/quest-harmonia-wild-series.git"
   },
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "postinstall": "husky install || true",
     "db:migrate": "npm run db:migrate --workspace=server",
