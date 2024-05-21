@@ -38,11 +38,11 @@ const read = async (req, res, next) => {
 // This operation is not yet implemented
 const edit = async (req, res, next) => {
   // Extract the program data from the request body
-  const program = req.body;
+  const program = { ...req.body, id: req.params.id };
 
   try {
     // Insert the program into the database
-    await tables.program.update(program, req.params.id);
+    await tables.program.update(program);
 
     // Respond with HTTP 204 (No Content)
     res.sendStatus(204);
