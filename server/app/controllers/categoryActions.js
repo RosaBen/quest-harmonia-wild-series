@@ -35,13 +35,12 @@ const read = async (req, res, next) => {
 };
 
 // The E of BREAD - Edit (Update) operation
-// This operation is not yet implemented
 const edit = async (req, res, next) => {
-  // Extract the category data from the request body
+  // Extract the category data from the request body and params
   const category = { ...req.body, id: req.params.id };
 
   try {
-    // Insert the category into the database
+    // Update the category in the database
     await tables.category.update(category);
 
     // Respond with HTTP 204 (No Content)
@@ -70,11 +69,9 @@ const add = async (req, res, next) => {
 };
 
 // The D of BREAD - Destroy (Delete) operation
-// This operation is not yet implemented
 const destroy = async (req, res, next) => {
-  // Extract the category data from the request body
   try {
-    // Insert the category into the database
+    // Delete the category from the database
     await tables.category.delete(req.params.id);
 
     // Respond with HTTP 204 (No Content)
