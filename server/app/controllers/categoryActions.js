@@ -61,7 +61,7 @@ const add = async (req, res, next) => {
     const insertId = await tables.category.create(category);
 
     // Respond with HTTP 201 (Created) and the ID of the newly inserted category
-    res.status(201).json({ id: insertId });
+    res.status(201).json({ insertId });
   } catch (err) {
     // Pass any errors to the error-handling middleware
     next(err);

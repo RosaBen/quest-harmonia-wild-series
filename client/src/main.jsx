@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             name: formData.get("name"),
           });
 
-          return redirect(`/categories/${response.data.id}`);
+          return redirect(`/categories/${response.data.insertId}`);
         },
       },
       {
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
                 name: formData.get("name"),
               });
 
-              return redirect(`/categories/${params.id.id}`);
+              return redirect(`/categories/${params.id}`);
             }
             case "delete": {
               await myAxios.delete(`/api/categories/${params.id}`);

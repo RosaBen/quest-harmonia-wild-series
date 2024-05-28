@@ -8,7 +8,9 @@ function CategoryDetails() {
   return (
     <>
       <h1>{category.name}</h1>
-      <Link to={`/categories/${category.id}/edit`}>Editer ✒️</Link>
+      <Link to={`/categories/${category.id}/edit`}>
+        Modifier <span aria-hidden="true">✒️ / 🗑️</span>
+      </Link>
       <ProgramList programs={category.programs} />
     </>
   );

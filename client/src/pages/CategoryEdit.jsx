@@ -5,13 +5,22 @@ function CategoryEdit() {
 
   return (
     <>
-      <Form method="put" style={{ display: "inline-block" }}>
-        <input type="text" name="name" defaultValue={loaderData.name} />
-        <button type="submit">✒️</button>
+      <Form method="put">
+        <input
+          type="text"
+          name="name"
+          defaultValue={loaderData.name}
+          aria-label="nom"
+        />
+        <button type="submit">
+          Modifier <span aria-hidden="true">✒️</span>
+        </button>
       </Form>
 
-      <Form method="delete" style={{ display: "inline-block" }}>
-        <button type="submit">🗑️</button>
+      <Form method="delete">
+        <button type="submit">
+          Supprimer <span aria-hidden="true">🗑️</span>
+        </button>
       </Form>
     </>
   );
