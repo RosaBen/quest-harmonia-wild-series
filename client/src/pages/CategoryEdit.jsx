@@ -6,21 +6,18 @@ function CategoryEdit() {
   return (
     <>
       <Form method="put">
+        <label htmlFor="name">Nom</label>{" "}
         <input
           type="text"
+          id="name"
           name="name"
           defaultValue={loaderData.name}
-          aria-label="nom"
         />
-        <button type="submit">
-          Modifier <span aria-hidden="true">✒️</span>
-        </button>
+        <button type="submit">Modifier</button>
       </Form>
 
       <Form method="delete">
-        <button type="submit">
-          Supprimer <span aria-hidden="true">🗑️</span>
-        </button>
+        <button type="submit">Supprimer</button>
       </Form>
     </>
   );
