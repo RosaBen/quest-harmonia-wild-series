@@ -30,9 +30,9 @@ const router = createBrowserRouter([
         action: async ({ request }) => {
           const formData = await request.formData();
 
-          const response = await myAxios.post("/api/categories", {
-            name: formData.get("name"),
-          });
+          const name = formData.get("name");
+
+          const response = await myAxios.post("/api/categories", { name });
 
           return redirect(`/categories/${response.data.insertId}`);
         },

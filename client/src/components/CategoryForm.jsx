@@ -5,7 +5,7 @@ function CategoryForm() {
     <Form method="post">
       <label htmlFor="name">Nouvelle catégorie</label>{" "}
       <input type="text" id="name" name="name" />
-      <button type="submit">+</button>
+      <button type="submit">Ajouter</button>
     </Form>
   );
 }
