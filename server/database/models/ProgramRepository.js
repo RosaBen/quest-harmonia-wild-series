@@ -32,7 +32,12 @@ class ProgramRepository extends AbstractRepository {
   async read(id) {
     // Execute the SQL SELECT query to retrieve a specific program by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
+      `select * , category.name as name 
+      from ${this.table} 
+      INNER JOIN category 
+      ON ${this.table}.category_id = category.id
+      where ${this.table}.id = ?`,
+
       [id]
     );
 

@@ -13,12 +13,32 @@ import App from "./App";
 import Categories from "./pages/Categories";
 import CategoryDetails from "./pages/CategoryDetails";
 import CategoryEdit from "./pages/CategoryEdit";
+import Programs from "./pages/Programs";
+import ProgramDetails from "./pages/ProgramDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path:"/programs",
+        element: <Programs />,
+        loader: async () => {
+          const response = await myAxios.get("/api/programs");
+      
+          return response.data;
+        },
+      },
+      {
+        path:"/programs/:id",
+        element: <ProgramDetails />,
+        loader: async ({ params }) => {
+          const response = await myAxios.get(`/api/programs/${params.id}`);
+
+          return response.data;
+        },
+      },
       {
         path: "/categories",
         element: <Categories />,

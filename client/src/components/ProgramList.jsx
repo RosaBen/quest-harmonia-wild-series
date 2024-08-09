@@ -2,11 +2,14 @@ import PropTypes from "prop-types";
 
 function ProgramList({ programs }) {
   return (
-    <ul>
+
+<ul>
       {programs.map((program) => (
-        <li key={program.id}>{program.title}</li>
+<li key={program.id}>{program.title}</li>
+
       ))}
     </ul>
+
   );
 }
 

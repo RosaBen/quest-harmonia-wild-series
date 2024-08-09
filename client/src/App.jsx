@@ -13,6 +13,9 @@ function App() {
           <li>
             <Link to="/categories">Catégories</Link>
           </li>
+          <li>
+            <Link to="/programs">Programmes</Link>
+          </li>
         </ul>
       </nav>
       <main>
