@@ -16,7 +16,7 @@ function Programs() {
                     <img src={program.poster} alt ={program.title} />
                     <p>{program.country}</p>
                     <p>{program.year}</p>
-                    <p>{program.name}</p>
+                    <p>{program.genre}</p>
                 </div>
             )):
             (<h2>Page en construction</h2>)}

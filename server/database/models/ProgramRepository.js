@@ -32,7 +32,7 @@ class ProgramRepository extends AbstractRepository {
   async read(id) {
     // Execute the SQL SELECT query to retrieve a specific program by its ID
     const [rows] = await this.database.query(
-      `select * , category.name as name 
+      `select * , category.name as genre 
       from ${this.table} 
       INNER JOIN category 
       ON ${this.table}.category_id = category.id
@@ -47,7 +47,12 @@ class ProgramRepository extends AbstractRepository {
 
   async readAll() {
     // Execute the SQL SELECT query to retrieve all programs from the "program" table
-    const [rows] = await this.database.query(`select * from ${this.table}`);
+    const [rows] = await this.database.query(
+      `select *, category.name as genre
+       from ${this.table}
+       inner join category
+        on ${this.table}.category_id = category.id
+       `);
 
     // Return the array of programs
     return rows;
